@@ -7,7 +7,7 @@
 
 @media (min-width: 620px) {
     .post{
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }    
 }
 
@@ -31,5 +31,37 @@
 
 .post__capture{
     font-weight: normal;
+    padding: 16px;
+}
+
+.post__input{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid lightgray !important;
+}
+
+.post__input__comment{
+    border: none !important;
+    
+    border-radius: 0 !important;
+}
+
+.post__input__comment.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    box-shadow:none;
+}
+
+.post__btn{
+    color: #0095f6 !important;
+    border: none !important;
+    /* border-top: 1px solid lightgray !important; */
+    border-radius: 0 !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+}
+
+.post__comments{
     padding: 16px;
 }

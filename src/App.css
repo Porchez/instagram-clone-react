@@ -2,9 +2,8 @@
   margin: 0;
 }
 
-.container{
+.app{
   background-color: #fafafa;
-  height: 100vh;
 }
 
 .header{
@@ -12,4 +11,29 @@
   object-fit: contain;
   padding: 15px;
   border-bottom: 1px solid lightgrey;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.header__image{
+  object-fit: contain;
+}
+
+.container__header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container__post{
+  padding: 20px;
+}
+
+.modal__login-body__image{
+  display: flex;
+  justify-content: center;
+}
+
+.form__sign-up{
+  padding: 30px;
 }
