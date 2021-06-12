@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+}
+
+.container{
+  background-color: #fafafa;
+  height: 100vh;
+}
+
+.header{
+  background-color:  white;
+  object-fit: contain;
+  padding: 15px;
+  border-bottom: 1px solid lightgrey;
+}
