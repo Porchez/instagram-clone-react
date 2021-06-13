@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Avatar } from '@material-ui/core'
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import './Profile.css'
 import { storage, auth, db } from './firebase'
 
