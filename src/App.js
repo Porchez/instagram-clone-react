@@ -2,9 +2,11 @@ import './App.css';
 import Post from './Post';
 import React, { useState, useEffect } from 'react';
 import { auth, db } from './firebase';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ImageUpload from './ImageUpload';
+import Profile from './Profile';
+
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -108,6 +110,7 @@ function App() {
   return (
     <div className="app">
       <Modal
+        id="modal-signIn"
         show={showSignIn}
         onHide={() => setShowSignIn(false)}
         centered
@@ -154,6 +157,7 @@ function App() {
       </Modal>
 
       <Modal
+        id="modal-signUp"
         show={showSignUp}
         onHide={() => setShowSignUp(false)}
         centered
@@ -197,8 +201,8 @@ function App() {
               </Form.Control.Feedback>
             </Form.Group>
             <div >
-              <Button name="button_sign_up" type="submit" variant="primary" onClick={handleSignUp} block>
-                Sign up
+              <Button id="btn-signUp" name="button_sign_up" type="submit" variant="primary" onClick={handleSignUp} block>
+                Sign Up
               </Button>
             </div>
           </Form>
@@ -210,11 +214,11 @@ function App() {
           <img className="header__image" src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" alt="" />
 
           {user ? (
-            <Button size="sm" variant="link" onClick={() => auth.signOut()}>
+            <Button id="btn-logOut" size="sm" variant="link" onClick={() => auth.signOut()}>
               Log Out
             </Button>
           ) : (
-            <Button size="sm" variant="link" onClick={() => setShowSignIn(true)}>
+            <Button id="btn-logIn" size="sm" variant="link" onClick={() => setShowSignIn(true)}>
               Log In
             </Button>
           )
@@ -224,16 +228,29 @@ function App() {
 
 
       <div className="container container__post">
-        <div>
-          {user && user.displayName ? (
-            <ImageUpload username={user.displayName} />
-          ) : (
-            <div></div>
-          )}
-        </div>
-        {posts.map(({ id, post }) => (
-          <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
-        ))}
+        <Row>
+          <Col>
+            <div>
+              {user && user.displayName ? (
+                <ImageUpload username={user.displayName} photoURL={user.photoURL} />
+              ) : (
+                <div></div>
+              )}
+            </div>
+            {posts.map(({ id, post }) => (
+              <Post key={id} postId={id} user={user} username={post.username} caption={post.caption} imageUrl={post.imageUrl} photoURL={post.photoURL} />
+            ))}
+          </Col>
+          <Col>
+            {
+              user ? (
+                <Profile user={user} />
+              ) : (
+                <div></div>
+              )
+            }
+          </Col>
+        </Row>
       </div>
     </div>
   );

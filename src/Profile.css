@@ -1,0 +1,31 @@
+.modal__edit__profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.modal__edit__profile__progress{
+    width: 100%;
+}
+
+.modal__edit__profile__input__name {
+    width: 80%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: inherit;
+}
+
+.edit__input__name{
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: 1px solid lightgrey !important;
+}
+
+.edit__input__name:focus {
+    color: #495057;
+    background-color: #fff;
+    outline: 0;
+    box-shadow:none;
+}

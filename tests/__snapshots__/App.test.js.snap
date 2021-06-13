@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> Test Suite <App /> match snapshot 1`] = `"<div class=\\"app\\"><div class=\\"header\\"><div class=\\"container container__header\\"><img class=\\"header__image\\" src=\\"https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png\\" alt=\\"\\"/><button type=\\"button\\" class=\\"btn btn-link btn-sm\\">Log In</button></div></div><div class=\\"container container__post\\"><div><div></div></div></div></div>"`;
+
+exports[`<App /> Test Suite Match snapshot 1`] = `"<div class=\\"app\\"><div class=\\"header\\"><div class=\\"container container__header\\"><img class=\\"header__image\\" src=\\"https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png\\" alt=\\"\\"/><button id=\\"btn-logIn\\" type=\\"button\\" class=\\"btn btn-link btn-sm\\">Log In</button></div></div><div class=\\"container container__post\\"><div><div></div></div></div></div>"`;
+
+exports[`<App /> Test Suite Test Button 1`] = `ShallowWrapper {}`;

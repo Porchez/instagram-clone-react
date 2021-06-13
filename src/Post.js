@@ -5,7 +5,7 @@ import { db } from './firebase';
 import { Button, Form } from 'react-bootstrap';
 import firebase from "firebase";
 
-function Post({ postId, user, username, caption, imageUrl }) {
+function Post({ postId, user, username, caption, imageUrl, photoURL }) {
     const [comment, setComment] = useState('');
     const [comments, setComments] = useState([]);
 
@@ -13,7 +13,6 @@ function Post({ postId, user, username, caption, imageUrl }) {
         let unsubscribe;
         if (postId) {
             unsubscribe = db.collection("posts").doc(postId).collection("comments").orderBy('timestamp', 'desc').onSnapshot(snapshot => {
-                console.log(snapshot.docs);
                 setComments(snapshot.docs.map(doc =>
                     doc.data()
                 ))
@@ -43,7 +42,7 @@ function Post({ postId, user, username, caption, imageUrl }) {
                 <Avatar
                     className="post__avatar"
                     alt=''
-                    src=""
+                    src={photoURL}
                 />
                 <h4> {username} </h4>
             </div>

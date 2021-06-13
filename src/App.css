@@ -37,3 +37,19 @@
 .form__sign-up{
   padding: 30px;
 }
+
+.avatar__profile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+}
+
+.avatar__btn__edit{
+  color: #0095f6 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+}
